@@ -1,4 +1,5 @@
 mod array;
+mod algorithm;
 
 use sfml::{
     graphics::{RenderWindow, RenderTarget, Color},
@@ -21,10 +22,11 @@ fn main() {
                 _ => ()
             }
         }
-        win.clear(Color::BLACK);
-        
-        array::draw(&mut win, (800., 600.), 2., &arr[..]);
 
+        // Algorithm step
+        
+        win.clear(Color::BLACK);
+        array::draw(&mut win, (800., 600.), 2., &arr[..]);
         win.display();
     }
 }
