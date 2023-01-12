@@ -13,6 +13,8 @@ fn main() {
     win.set_framerate_limit(144);
     
     let arr = array::generate(100);
+    
+    println!("");
 
     // Main loop
     while win.is_open() {
