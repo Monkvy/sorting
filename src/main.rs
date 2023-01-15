@@ -19,7 +19,14 @@ fn main() {
         while let Some(event) = win.poll_event() {
             match event {
                 Event::Closed => win.close(),
-                Event::KeyPressed { code, alt: _, ctrl: _, shift: _, system: _ } if code == Key::Space => sort.step(),
+                Event::KeyPressed { code, alt: _, ctrl: _, shift: _, system: _ } => {
+                    if code == Key::Escape {
+                        win.close()
+                    }
+                    else if code == Key::Space {
+                        sort.step()
+                    }
+                },
                 _ => ()
             }
         }
